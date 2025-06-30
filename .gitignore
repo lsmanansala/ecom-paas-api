@@ -1,0 +1,22 @@
+# Node modules
+node_modules
+
+# Logs
+*.log
+npm-debug.log*
+
+# Build output
+dist
+
+# Env files
+.env
+
+# OS / editor / dependency clutter
+.DS_Store
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+.idea/
+.vscode/
+coverage
