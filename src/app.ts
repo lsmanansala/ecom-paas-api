@@ -8,10 +8,6 @@ connectDB()
 
 app.use(express.json())
 app.use('/api/products', productRoutes)
-<<<<<<< HEAD
-app.use('/api/orders', productRoutes)
-=======
 app.use('/api/auth', authRoutes)
 
->>>>>>> dev
 export default app
