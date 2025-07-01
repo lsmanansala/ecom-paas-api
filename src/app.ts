@@ -7,5 +7,5 @@ connectDB()
 
 app.use(express.json())
 app.use('/api/products', productRoutes)
-
+app.use('/api/orders', productRoutes)
 export default app
