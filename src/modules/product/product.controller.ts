@@ -38,7 +38,6 @@ export const createProduct = async (req: Request, res: Response) => {
   }
 }
 
-<<<<<<< HEAD
 //DELETE PRODUCT
 export const deleteProduct = async (req: Request, res: Response):  Promise<any> => {
   try {
@@ -56,7 +55,7 @@ export const deleteProduct = async (req: Request, res: Response):  Promise<any> 
     return res.status(500).json({ message: "PRODUCT ERROR", error });
   }
 };
-=======
+
 export const updateProduct = async (req: Request, res: Response) => {
   try {
     const { id } = req.params;
@@ -73,4 +72,3 @@ export const updateProduct = async (req: Request, res: Response) => {
     res.status(500).json({message: error})
   }
 }
->>>>>>> f275841f0aa1f0a262d7ba5ed2ac6137814aa53c
