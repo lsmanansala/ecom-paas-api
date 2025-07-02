@@ -10,6 +10,24 @@ export const getAllProducts = async (req: Request, res: Response) => {
   }
 }
 
+export const getProduct = async (req: Request, res: Response) => {
+  try {
+    const { id } = req.params;
+    const product = await Product.findById(id);
+
+    if(!id){
+      res.status(400).json({message: "Product Id is required"})
+    }
+    if(!product) {
+      res.status(404).json({message: "Product not found"})
+    }
+
+    res.status(200).json(product)
+  } catch (error) {
+    console.error(error)
+  }
+}
+
 export const createProduct = async (req: Request, res: Response) => {
   try {
     const { name, price, description, stock } = req.body
@@ -20,6 +38,7 @@ export const createProduct = async (req: Request, res: Response) => {
   }
 }
 
+<<<<<<< HEAD
 //DELETE PRODUCT
 export const deleteProduct = async (req: Request, res: Response):  Promise<any> => {
   try {
@@ -37,3 +56,21 @@ export const deleteProduct = async (req: Request, res: Response):  Promise<any> 
     return res.status(500).json({ message: "PRODUCT ERROR", error });
   }
 };
+=======
+export const updateProduct = async (req: Request, res: Response) => {
+  try {
+    const { id } = req.params;
+    const updatedProduct = await Product.findByIdAndUpdate(id, req.body, {new: true, runValidators: true});
+
+    if(!id){
+      res.status(400).json({message: "Product Id is required"})
+    }
+    if(!updatedProduct) {
+      res.status(404).json({message: "Product not found"})
+    }
+    res.status(200).json(updatedProduct)
+  } catch (error){
+    res.status(500).json({message: error})
+  }
+}
+>>>>>>> f275841f0aa1f0a262d7ba5ed2ac6137814aa53c
